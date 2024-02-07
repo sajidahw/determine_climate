@@ -1,4 +1,12 @@
-.App {
+
+.container {
+  max-width: 1080px;
+  margin: 20px auto; /* top + bottom: 20px, R + L: auto so it's centered */
+}
+
+
+/* boiler plate code*/
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +43,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

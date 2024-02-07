@@ -1,11 +1,31 @@
+
+/*   ----- Imports  -----  */
+/* Add fonts from the app's server 
+    @font-face {                
+      font-family: 'FontName';
+      src: url('FontName.woff2') format('woff2');
+    } 
+    ...or hosted services like Google Fonts 
+    @import url(//fonts.googleapis.com/css?family=Font+Name);
+  */
+
+@import url('https://fonts.googleapis.com/css2?family=Montaga&family=Montserrat:wght@300;400;500&family=Raleway:wght@300;500&family=Roboto:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+
+
+/*  ----- Viewport ----- elements inherited by all remaining elements ----- */
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Montserrat","Roboto", sans-serif !important;
+  font-weight: 700;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f5edb9; /*#d5d4d4*/
 }
+
+
+/*  ----- Coding or instructional typography ----- */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

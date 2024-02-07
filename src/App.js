@@ -1,25 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import CitySearch from './components/citysearch/citysearch';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <CitySearch />
     </div>
   );
 }
 
 export default App;
+
+// importing our CitySearch component via <CitySearch /> in the App component
