@@ -6,27 +6,39 @@ import { geodbApiOptions, geodb_api_url } from "../../api";
 
 
 // action which drives the city search in passing data to other widgets
-const CitySearch = ({onSearchCityChange}) => {
+const CitySearch = ({ onSearchCityChange }) => {
     // use state hooks variables with set for updating variable
     const [citysearch, setCitySearch] = useState(null); // initial state is null
 
-    // using fetch method to url to retrieve data from GeoDB API
-    const loadCityOptions = async (inputValue) => {
-        try {
-            const response = await fetch(geodb_api_url, geodbApiOptions);
-            const result = await response.text();
-            console.log(result);
-        } catch (error) {
-            console.error(error);
-        }
-    }
+    // using fetch method to url to retrieve data from GeoDB API; adding constraint to show cities with population over 10,000 and showing results of inputValue
+    const loadCityOptions = (inputValue) => {
+
+        // promise chain instead of async/await
+        // inner return: return array of objects with long & lat as OpenWeatherMap API requires it to retrieve weather data
+        return fetch(
+            `${geodb_api_url}/cities?minPopulation=50000&namePrefix=${inputValue}`, geodbApiOptions)
+            .then((response) => response.json())
+            .then((response) => {
+                return {
+                    options: response.data.map((city) => {
+                        return {
+                            
+                            label: `${city.name}, ${city.country}, ${city.countryCode}`,
+                            value: `${city.latitude} ${city.longitude}`,
+                            
+                        };
+                    }),
+                };
+            })
+            .catch((err) => console.error(err));
+    };
 
     /* retrieve data from asyncPaginate componen, searchCityData */
     const handleOnChange = (searchCityData) => {
         setCitySearch(searchCityData); /* update our search*/
         onSearchCityChange(searchCityData); /* pass the city search data received from input */
 
-    }
+    };
 
     // what the user sees
     return (

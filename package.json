@@ -10,6 +10,7 @@
     "react-accessible-accordion": "^5.0.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "react-select": "^5.8.0",
     "react-select-async-paginate": "^0.7.3",
     "web-vitals": "^2.1.4"
   },
@@ -38,6 +39,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@emotion/react": ">=11.0.0"
   }
 }
