@@ -9,7 +9,8 @@
     @import url(//fonts.googleapis.com/css?family=Font+Name);
   */
 
-@import url('https://fonts.googleapis.com/css2?family=Montaga&family=Montserrat:wght@300;400;500&family=Raleway:wght@300;500&family=Roboto:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montaga&family=Montserrat:wght@300;400;500;600;700&family=Raleway:wght@300;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap');
+
 
 
 
@@ -24,10 +25,47 @@ body {
   background-color: #f5edb9; /*#d5d4d4*/
 }
 
+/* Input label text field */
+.inputcontainer {
+  /* display: flex; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 75%;
+  background-color: #f5edb9;
+}
+
+.mapLabel {
+  width: 100%;
+  height: 100%;
+  margin: 3px 5px;
+  padding: 10px;
+}
+
+.gmap{
+  width: 55%;
+  height: 60%;
+  margin: 0px 5px;
+  padding: 5px;
+
+}
 
 /*  ----- Coding or instructional typography ----- */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/*  -----  Typography  ----- */
+h2 {
+  color: rgba(44, 64, 1, 1);
+  background: rgba(221, 183, 170, 0.85);
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 10px;
+  width: auto;
+  height: 25px;
+  text-align: center;
 }

@@ -7,6 +7,15 @@ export const geodbApiOptions = {
     method: 'GET',
     headers: {
         'X-RapidAPI-Key': process.env.REACT_APP_X_RAPIDAPI_KEY,
-        'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
+        'X-RapidAPI-Host': process.env.REACT_APP_X_RAPIDAPI_HOST,
     }
 };
+
+export const googlemaps_api_url = 'https://maps.googleapis.com/maps/api/js';
+export const GOOGLEMAPS_API_KEY = process.env.REACT_APP_GOOGLEMAPS_API_KEY;
+
+export const libraries = ['places'];
+
+export const OPENWEATHER_API_URL = "https://api.openweathermap.org/data/2.5";
+
+export const OPENWEATHER_API_KEY = process.env.REACT_APP_OPENWEATHER_API_KEY;

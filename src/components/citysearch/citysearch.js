@@ -22,10 +22,8 @@ const CitySearch = ({ onSearchCityChange }) => {
                 return {
                     options: response.data.map((city) => {
                         return {
-                            
-                            label: `${city.name}, ${city.country}, ${city.countryCode}`,
+                            label: `${city.name}, ${city.region}, ${city.country}, ${city.countryCode}`,
                             value: `${city.latitude} ${city.longitude}`,
-                            
                         };
                     }),
                 };
@@ -35,19 +33,18 @@ const CitySearch = ({ onSearchCityChange }) => {
 
     /* retrieve data from asyncPaginate componen, searchCityData */
     const handleOnChange = (searchCityData) => {
-        setCitySearch(searchCityData); /* update our search*/
+        setCitySearch(searchCityData); /* update our search with new value*/
         onSearchCityChange(searchCityData); /* pass the city search data received from input */
-
     };
 
     // what the user sees
     return (
         <AsyncPaginate
-            placeholder="Search for a city :"
-            debounceTimeout={600}/* slows API requests in ms*/
-            value={citysearch}
+            placeholder="Begin typing a city's name to autocomplete. Overwrite a city to continue searching :"
+            debounceTimeout={600}/* slows API requests in ms */
+            value={citysearch} /* user input value of city name */
             onChange={handleOnChange} /* update value from App.js to pass info to other 2 widgets*/
-            loadOptions={loadCityOptions} /* load city options from API */
+            loadOptions={loadCityOptions} /* load city long+lat from API */
         />
     )
 }
@@ -56,3 +53,4 @@ export default CitySearch;
 
 // initially tested with dummy component: return('Hello World!')
 // replaced with asyncPaginate placeholder to search for cities.
+// returns/get long and lat data from GeoDB API after a user enters in a city
