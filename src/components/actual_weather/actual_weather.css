@@ -1,0 +1,98 @@
+
+/* div{}*/
+
+.actualweather_card{
+    width: 475px; /* 300 px */
+    border-radius: 6px;
+    box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
+    color: rgba(44, 64, 1, 1); /* #fff;*/
+    font-family: "Montserrat";
+    background-color: rgba(225, 186, 186, 0.6);/*rgba(221, 183, 170, 0.65);*/
+    margin: 20px auto 0 auto;
+    padding: 0px 20px 20px 20px;
+
+}
+
+.actualweather_contents, .bottom_specifics{
+    display: flex;
+    /* flex-direction: space-between; */
+    align-items: center;
+    justify-content: space-between;
+    /* padding: 0px 20px 20px 20px; */
+}
+
+
+/* p{}*/
+.city-name{
+    /* font-size: 1.5em; */
+    font-size: 21px; /* 18px */
+    font-weight: 700;
+    /* color: rgba(44, 64, 1, 1); */
+    color: rgb(141, 31, 6);
+    margin: 0;
+    /* padding-top: 15px; */
+    line-height: 1;
+    letter-spacing: 2px;
+}
+
+.weather-description{
+    font-weight: 700;
+    font-size: 17px; /*14*/
+    line-height: 1;
+    margin: 12px; /* 0 */
+    letter-spacing: 1px;
+}
+
+.weather-icon{
+    width: 105px; /* 100px */
+
+}
+
+.temperature{
+    font-weight: 700;
+    font-size: 70px;
+    width: auto;
+    letter-spacing: -5px;
+    font-family: "Roboto";
+    margin: 10px 10px; /*10px 0; */
+    padding-right: 70px; /*40px gives it more space between temp and details*/
+
+}
+
+.details{
+    width: 100%;
+    padding-left: 20px; /*20px*/
+
+}
+
+.parameter-row{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.parameter-label{
+    text-align: left;
+    /* font-weight: 400; */
+    /* font-size: 12px; */
+}
+
+.parameter-value{
+    text-align: right;
+    font-weight: 900; /* 600 */
+    font-size: 16px; /* 12px */
+    font-family: "Raleway";
+}
+
+/* underlines Details in city card */
+.parameter-label.top{/*top here gives it the underline*/
+    border-bottom: 2px solid rgb(164, 68, 4);
+    margin: 0;
+    padding: 0;
+}
+
+.parameter-label.actualweather_card {
+    border-bottom: 2px solid rgb(164, 68, 4);
+    margin: 0;
+    padding: 0;
+}
