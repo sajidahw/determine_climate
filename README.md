@@ -1,11 +1,11 @@
 # Determine_Climate: A React based weather app
 
 This is a React based climate app utilizing REST APIs.
-OpenWeather API is used to pull in weather related data for a location. To make it easier for users to enter a location, GeoDB API is used to autocomplete a city's name. Whereas, Google Maps API is used to display the location on a map.
+OpenWeather API is used to pull in weather related data for a location's city name and for a US zip code. To make it easier for users to enter a location, GeoDB API is used to autocomplete a city's name.
+
+<!-- Whereas, Google Maps API is used to display the location on a map. -->
 
 This app was built using the Create React app skeleton.
-
-
 
 #### Getting Started with Create React App
 
@@ -37,7 +37,6 @@ The build is minified, and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
