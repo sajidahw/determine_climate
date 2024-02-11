@@ -1,9 +1,64 @@
-
-.container {
+.inputcontainer {
   max-width: 1080px;
   margin: 20px auto; /* top + bottom: 20px, R + L: auto so it's centered */
+  margin-bottom: 250px;
 }
 
+header {
+  background-color: rgba(218, 167, 167, 0.883); /*0.25*/
+  color: rgba(44, 64, 1, 1); /* from body instead*/
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bolder;
+  margin: 0px auto;
+  /* padding: 1px 5px; 10px 25px */
+  max-width: 1200px;
+  border-style: double;
+  /* border-radius: 1%; */
+  border-radius: 15px;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin: 1% auto;
+  padding: 0.5%;
+  border-radius: 15px;
+  background-color: rgba(218, 167, 167, 0.883);
+  color: rgba(44, 64, 1, 1);
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bolder;
+  max-width: 1200px;
+  /* border-style: ridge; */
+  border-radius: 15px;
+  /* border-color: darkred; */
+  border: 2px solid darkred;
+}
+
+footer {
+  background-color: rgba(218, 167, 167, 0.883);
+  /* rgba(245, 213, 213, 0.801); */
+  /* background-color:var(--olive-green); */
+  /* color:var(--nude-pink); */
+  color: rgb(64, 47, 1);
+  font-family: "Montserrat", "Raleway", sans-serif;
+  font-weight: bolder;
+  font-size: 1em;
+  margin: 1% auto;
+  padding: 0.5%;
+  max-width: 1200px;
+  /* border-style: 1px solid rgba(248, 229, 212, 1); */
+  border-radius: 15px;
+  text-align: center;
+  letter-spacing: 3px;
+  /* position: fixed; */
+  display: flex;
+  flex-direction: column;
+}
+
+.weatherCardButton {
+  float: right;
+}
 
 /* boiler plate code*/
 /* .App {
