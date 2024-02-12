@@ -76,10 +76,16 @@ const ZipcodeSearch = ({ setCurrentWeather, setForecastWeather }) => {
       <h2>Search Weather by Zipcode</h2>
       <div></div>
       <div>
+        <label className="red">NOTE: </label>
+        <label>
+          Entering in U.S. zipcodes gives faster and precise weather results.
+        </label>
+        <br></br>
         <label>Enter a U.S. zipcode:</label>
         <input
           name="zipcode"
           type="text"
+          placeholder="example: 94110"
           onChange={handleOnChange}
           value={zipcodesearch}
         />

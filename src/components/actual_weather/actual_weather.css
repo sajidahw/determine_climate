@@ -12,7 +12,7 @@
 }
 
 .actualweather_contents,
-.bottom_specifics {
+.card_specifics {
   display: flex;
   /* flex-direction: space-between; */
   align-items: center;
@@ -90,4 +90,22 @@
   border-bottom: 2px solid rgb(164, 68, 4);
   margin: 0;
   padding: 0;
+}
+
+/* weather card defintions show more link*/
+.showMore {
+  color: rgb(120, 63, 26);
+  font-size: small;
+  background-color: rgba(235, 197, 136, 0.65);
+}
+
+.definition {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(26, 37, 2);
+  background-color: bisque;
+  /* rgba(245, 201, 131, 0.839); */
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
 }

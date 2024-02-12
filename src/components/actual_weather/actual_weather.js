@@ -1,4 +1,6 @@
 import "./actual_weather.css";
+import { useState } from "react";
+import { useCollapse } from "react-collapsed"; // for collapsible definitions within card
 
 // dummy component to integrate inside of app.js file to start building
 // card display of current weather data
@@ -7,6 +9,8 @@ import "./actual_weather.css";
 // downloaded icons from folder: src={`icons/${data.weather[0].icon}.png`}
 // icons from API: src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`}
 const ActualWeather = ({ data }) => {
+  const { getCollapseProps, getToggleProps, isExpanded } = useCollapse(); // for collapsible definitions within card
+
   return (
     <>
       <br></br>
@@ -27,8 +31,7 @@ const ActualWeather = ({ data }) => {
             src={`icons/${data.weather[0].icon}.png`}
           />
         </div>
-
-        <div className="bottom_specifics">
+        <div className="card_specifics">
           <p className="temperature">{Math.round(data.main.temp)}°F</p>
 
           <div className="details">
@@ -58,6 +61,45 @@ const ActualWeather = ({ data }) => {
               <span className="parameter-value">{data.main.pressure} inHg</span>
             </div>
           </div>
+        </div>
+
+        <div>
+          <button className="showMore" {...getToggleProps()}>
+            {isExpanded ? "Collapse" : "Expand for Weather Definitions"}
+          </button>
+          <section className="expandable" {...getCollapseProps()}>
+            <ul>
+              <li>
+                <i>Feels like: </i>
+              </li>
+              <p className="definition">
+                Temperature from a human's weather perception regarding outside
+                weather.
+              </p>
+              <li>
+                <i>Wind: </i>
+              </li>
+              <p className="definition">
+                Wind speed in miles per hour for horizontal speed and direction.
+              </p>
+              <li>
+                <i>Humidity: </i>
+              </li>
+              <p className="definition">
+                The amount of water vapor in the air. The higher the humidiy,
+                the wetter it feels outside.
+              </p>
+              <li>
+                <i>Pressure: </i>
+              </li>
+              <p className="definition">
+                Atmosphereic pressure on sea level measured in hPa. High
+                pressure is associated with dry weather and mostly clear skies
+                whereas low pressure is associated with clouds and
+                precipitation.
+              </p>
+            </ul>
+          </section>
         </div>
       </div>
     </>

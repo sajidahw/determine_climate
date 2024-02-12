@@ -27,3 +27,4 @@ yarn-error.log*
 .vscode/
 TESTING.md
 zipcode_search.js
+src/components/zipsearch/zipcode_search.js

@@ -111,6 +111,42 @@ label {
   /* width: 90%; */
 }
 
+.red {
+  color: rgb(200, 28, 28);
+  font-weight: bold;
+  font-style: italic;
+}
+
+.redRate {
+  color: rgba(165, 9, 9, 0.967);
+  font-weight: bold;
+  font-style: italic;
+  font-size: 15px;
+  margin-left: 0px; /* 10px; */
+}
+
+.cityNote {
+  margin: 20px 20px 20px 20px;
+}
+
+.toUse {
+  font-weight: bolder;
+  color: rgb(3, 98, 30);
+  margin: 0px 20px 0px 0px;
+}
+
+.zipcodeLabel {
+  font-style: italic;
+}
+
+.paddingBackspace {
+  margin-left: 100px;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: italic;
+  color: rgb(6, 70, 24);
+}
+
 input {
   background-color: rgba(227, 202, 207, 0.5);
 }
