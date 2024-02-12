@@ -51,7 +51,7 @@ footer {
   border-radius: 15px;
   text-align: center;
   letter-spacing: 3px;
-  /* position: fixed; */
+  position: fixed;
   display: flex;
   flex-direction: column;
 }
