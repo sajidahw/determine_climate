@@ -12,12 +12,11 @@ import {
 // action which drives the zipcode search in passing data to other widgets
 const ZipcodeSearch = ({ setCurrentWeather, setForecastWeather }) => {
   // use state hooks variables with set for updating variable
-  const [zipcodesearch, setZipcodeSearch] = useState(null); // initial state is null
+  const [zipcodesearch, setZipcodeSearch] = useState(""); // initial state is null
 
   // using fetch method to url to retrieve data from OPENWEATHER GEO API for zipcode search-showing results of zipcodeValue
   const fetchWeatherByZipcode = async () => {
-    // promise chain instead of async/await
-    // inner return: return array of objects with long & lat as OpenWeatherMap API requires it to retrieve weather data
+    // return: return array of objects with long & lat as OpenWeatherMap API requires it to retrieve weather data
     // fetch(url, options) where options is {method: "GET"} as default so fetch(url) ok.
     // // fetch(
     //     `${OPENWEATHER_API_URL}/zip?zip=${zipcodeValue}&appid=${OPENWEATHER_API_KEY}`)
@@ -81,14 +80,16 @@ const ZipcodeSearch = ({ setCurrentWeather, setForecastWeather }) => {
           Entering in U.S. zipcodes gives faster and precise weather results.
         </label>
         <br></br>
-        <label>Enter a U.S. zipcode:</label>
-        <input
-          name="zipcode"
-          type="text"
-          placeholder="example: 94110"
-          onChange={handleOnChange}
-          value={zipcodesearch}
-        />
+        <label>
+          Enter a U.S. zipcode:
+          <input
+            name="zipcode"
+            type="text"
+            placeholder="example: 94110"
+            onChange={handleOnChange}
+            value={zipcodesearch}
+          />
+        </label>
         <button type="submit" onClick={fetchWeatherByZipcode}>
           Submit
         </button>
@@ -107,34 +108,3 @@ export default ZipcodeSearch;
 // initially tested with dummy component: return('Hello World!')
 // replaced with asyncPaginate placeholder to search for cities.
 // returns/get long and lat data from OpenWeather Geo API after a user enters in a zipcode
-
-//  const loadZipcodeOptions = (zipcodeValue) => {
-
-//         // promise chain instead of async/await
-//         // inner return: return array of objects with long & lat as OpenWeatherMap API requires it to retrieve weather data
-//         // fetch(url, options) where options is {method: "GET"} as default so fetch(url) ok.
-//         // // fetch(
-//         //     `${OPENWEATHER_API_URL}/zip?zip=${zipcodeValue}&appid=${OPENWEATHER_API_KEY}`)
-//         return fetch(
-//             `${OPENWEATHER_API_URL_ZIPCODE_CONVERSION}/weather?zip=${zipcodeValue}&appid=${OPENWEATHER_API_KEY}`)
-//             .then((response) => response.json())
-//             .then((response) => {
-//                 return {
-//                     options: response.data.map((city) => {
-//                         return {
-//                             label: `${city.zip}, ${city.name}, ${city.country}`,
-//                             value: `${city.lat} ${city.lon}`,
-//                         };
-//                     }),
-//                 };
-//             })
-//             .catch((err) => console.error(err));
-//     };
-
-// {/* <AsyncPaginate
-// placeholder="Begin typing a city's zipcode :"
-// debounceTimeout={600}/* slows API requests in ms */
-// value={zipcodesearch} /* user input value of city zipcode */
-// onChange={handleOnChange} /* update value from App.js to pass info to other 2 widgets*/
-// loadOptions={loadZipcodeOptions} /* load city long+lat from API */
-// /> */}
