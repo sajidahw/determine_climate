@@ -8,13 +8,13 @@ const AirQuality = ({ data: pollutionData }) => {
     getCollapseProps: getCollapsePropsAir,
     getToggleProps: getTogglePropsAir,
     isExpanded: isExpandedAir,
-  } = useCollapse(); // for collapsible/expandible air pollution within card
+  } = useCollapse(); // for collapsible/expandable air pollution within card
 
   const {
     getCollapseProps: getCollapsePropsDef,
     getToggleProps: getTogglePropsDef,
     isExpanded: isExpandedDef,
-  } = useCollapse(); // for collapsible/expandible definitions within card
+  } = useCollapse(); // for collapsible/expandable definitions within card
 
   return (
     <>
