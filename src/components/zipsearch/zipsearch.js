@@ -10,7 +10,11 @@ import {
 // driven by OpenWeather Geo API for zipcode search to obtain lat/long data
 
 // action which drives the zipcode search in passing data to other widgets
-const ZipcodeSearch = ({ setCurrentWeather, setForecastWeather }) => {
+const ZipcodeSearch = ({
+  setCurrentWeather,
+  // setForecastWeather,
+  setPollutionData,
+}) => {
   // use state hooks variables with set for updating variable
   const [zipcodesearch, setZipcodeSearch] = useState(""); // initial state is null
 
@@ -18,26 +22,25 @@ const ZipcodeSearch = ({ setCurrentWeather, setForecastWeather }) => {
   const fetchWeatherByZipcode = async () => {
     // return: return array of objects with long & lat as OpenWeatherMap API requires it to retrieve weather data
     // fetch(url, options) where options is {method: "GET"} as default so fetch(url) ok.
-    // // fetch(
-    //     `${OPENWEATHER_API_URL}/zip?zip=${zipcodeValue}&appid=${OPENWEATHER_API_KEY}`)
 
-    // label: `${city.zip}, ${city.name}, ${city.country}`,
-    //         value: `${city.lat} ${city.lon}`,
-
+    // first API call to get the lat/long data from OpenWeather Geo API
     const response = await fetch(
       `${OPENWEATHER_API_URL_ZIPCODE_CONVERSION}/zip?zip=${zipcodesearch},US&appid=${OPENWEATHER_API_KEY}`
     );
 
     const geodata = await response.json();
 
+    // second API call to get the weather data from OpenWeatherMap API based off of lat/lon coordinates
     const weatherResponse = await fetch(
       `${OPENWEATHER_API_URL}/weather?lat=${geodata.lat}&lon=${geodata.lon}&appid=${OPENWEATHER_API_KEY}&units=imperial`
     );
     const weatherData = await weatherResponse.json();
 
-    //  how to Format the weatherData  and label value
-    // label: `${weatherData.zip}, ${weatherData.name}, ${weatherData.country}`,
-    // value: `${weatherData.coord.lat} ${weatherData.coord.lon}`,
+    // retrieving pollution data from Alex's microservice
+    const currentPollutionAPIFetch = await fetch(
+      `https://361-microservice.vercel.app/api/get-pollution-data?lat=${geodata.lat}&lon=${geodata.lon}`
+    );
+    const pollutionData = await currentPollutionAPIFetch.json();
 
     // console.log(geodata);
     // console.log(weatherData);
@@ -47,14 +50,20 @@ const ZipcodeSearch = ({ setCurrentWeather, setForecastWeather }) => {
       city: weatherData.name,
       ...weatherData,
     }); // pulling from vars above & adding data from citysearch.js so labels appear
-    setForecastWeather({
+
+    // setForecastWeather({
+    //   city: weatherData.name,
+    //   ...weatherData,
+    // });
+
+    setPollutionData({
       city: weatherData.name,
-      ...weatherData,
+      ...pollutionData,
     });
     //   return fetch(${OPENWEATHER_API_URL})
   };
 
-  /* retrieve data from asyncPaginate component, searchCityData */
+  /* retrieve new data from input */
   const handleOnChange = (e) => {
     setZipcodeSearch(e.target.value); /* update our search with new value*/
 

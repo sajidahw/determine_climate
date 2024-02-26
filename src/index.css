@@ -156,3 +156,8 @@ div {
   padding: 3px;
   /* font-size: 15px; */
 }
+
+.weatherCardButton {
+  margin: 20px auto 20px auto;
+  padding: 10px 20px 10px 20px;
+}

@@ -35,7 +35,7 @@ const CitySearch = ({ onSearchCityChange }) => {
     }
   };
 
-  /* retrieve data from asyncPaginate component, searchCityData */
+  /* retrieve new data from asyncPaginate component, searchCityData */
   const handleOnChange = (searchCityData) => {
     setCitySearch(searchCityData); /* update search with new value*/
     onSearchCityChange(

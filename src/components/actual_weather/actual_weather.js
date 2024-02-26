@@ -1,5 +1,4 @@
 import "./actual_weather.css";
-import { useState } from "react";
 import { useCollapse } from "react-collapsed"; // for collapsible definitions within card
 
 // dummy component to integrate inside of app.js file to start building
