@@ -19,7 +19,7 @@ export const OPENWEATHER_API_URL = "https://api.openweathermap.org/data/2.5";
 
 // zipcode OpenWeather API zipcode search conversion to lat/lon
 export const OPENWEATHER_API_URL_ZIPCODE_CONVERSION =
-  "http://api.openweathermap.org/geo/1.0";
+  "https://api.openweathermap.org/geo/1.0";
 
 // Google Maps API key and URL
 export const googlemaps_api_url = "https://maps.googleapis.com/maps/api/js";

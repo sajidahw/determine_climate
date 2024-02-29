@@ -124,6 +124,7 @@ function App() {
   // };
 
   // passing in component if no errors by using && to feed to weather card in ActualWeather.js
+  // props are defined here and passed thru components on their .js file
   return (
     <>
       <h1>Weather Retrieval App</h1>
