@@ -1,3 +1,5 @@
+// **ENSURE** all URL start with https://; ending in 's'
+
 // geodb api key and host to extract city
 
 export const geodb_api_url = "https://wft-geo-db.p.rapidapi.com/v1/geo";
