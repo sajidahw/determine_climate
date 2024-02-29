@@ -3,6 +3,8 @@
 This is a React based climate app utilizing REST APIs.
 OpenWeather API is used to pull in weather related data for a location's city name and for a US zip code. To make it easier for users to enter a location, GeoDB API is used to autocomplete a city's name.
 
+Climate app is deployed online: [https://determine-climate.vercel.app/](https://determine-climate.vercel.app/)
+
 <!-- Whereas, Google Maps API is used to display the location on a map. -->
 
 This app was built using the Create React app skeleton.
