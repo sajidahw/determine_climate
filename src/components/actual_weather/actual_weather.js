@@ -1,12 +1,6 @@
 import "./actual_weather.css";
 import { useCollapse } from "react-collapsed"; // for collapsible definitions within card
 
-// dummy component to integrate inside of app.js file to start building
-// card display of current weather data
-// 'data' is being passed in from app.js from && line of component
-// downloaded icons for static testing: src="../icons/50d.png"
-// downloaded icons from folder: src={`icons/${data.weather[0].icon}.png`}
-// icons from API: src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`}
 const ActualWeather = ({ data }) => {
   const { getCollapseProps, getToggleProps, isExpanded } = useCollapse(); // for collapsible definitions within card
 
@@ -106,6 +100,3 @@ const ActualWeather = ({ data }) => {
 };
 
 export default ActualWeather;
-
-// top = actualweather_contents
-// bottom = bottom

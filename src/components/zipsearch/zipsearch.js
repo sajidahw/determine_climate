@@ -1,7 +1,4 @@
-// Search component for zipcode search on top of the screen using the async paginate package
-
 import { useState } from "react";
-// import { AsyncPaginate } from "react-select-async-paginate";
 import {
   OPENWEATHER_API_KEY,
   OPENWEATHER_API_URL,
@@ -10,17 +7,13 @@ import {
 // driven by OpenWeather Geo API for zipcode search to obtain lat/long data
 
 // action which drives the zipcode search in passing data to other widgets
-const ZipcodeSearch = ({
-  setCurrentWeather,
-  // setForecastWeather,
-  setPollutionData,
-}) => {
+const ZipcodeSearch = ({ setCurrentWeather, setPollutionData }) => {
   // use state hooks variables with set for updating variable
-  const [zipcodesearch, setZipcodeSearch] = useState(""); // initial state is null
+  const [zipcodesearch, setZipcodeSearch] = useState("");
 
-  // using fetch method to url to retrieve data from OPENWEATHER GEO API for zipcode search-showing results of zipcodeValue
+  // retrieve data from OPENWEATHER GEO API for zipcode search-showing results of zipcodeValue
   const fetchWeatherByZipcode = async () => {
-    // return: return array of objects with long & lat as OpenWeatherMap API requires it to retrieve weather data
+    // return: array of objects with long & lat
     // fetch(url, options) where options is {method: "GET"} as default so fetch(url) ok.
 
     // first API call to get the lat/long data from OpenWeather Geo API
@@ -42,37 +35,22 @@ const ZipcodeSearch = ({
     );
     const pollutionData = await currentPollutionAPIFetch.json();
 
-    // console.log(geodata);
-    // console.log(weatherData);
-
-    // update the responses to the state via setVar so data can be passed to the components & using spread operator to add data from citysearch.js
     setCurrentWeather({
       city: weatherData.name,
       ...weatherData,
-    }); // pulling from vars above & adding data from citysearch.js so labels appear
-
-    // setForecastWeather({
-    //   city: weatherData.name,
-    //   ...weatherData,
-    // });
+    });
 
     setPollutionData({
       city: weatherData.name,
       ...pollutionData,
     });
-    //   return fetch(${OPENWEATHER_API_URL})
   };
 
   /* retrieve new data from input */
   const handleOnChange = (e) => {
     setZipcodeSearch(e.target.value); /* update our search with new value*/
-
-    //testing
-    // console.log(searchZipcodeData);
   };
 
-  // what the user sees
-  // changed type=number to type=text
   return (
     <>
       <br></br>
@@ -114,6 +92,5 @@ const ZipcodeSearch = ({
 
 export default ZipcodeSearch;
 
-// initially tested with dummy component: return('Hello World!')
-// replaced with asyncPaginate placeholder to search for cities.
+// asyncPaginate placeholder to search for cities as dropdown of city results.
 // returns/get long and lat data from OpenWeather Geo API after a user enters in a zipcode

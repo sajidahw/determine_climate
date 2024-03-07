@@ -12,8 +12,7 @@ export const geodbApiOptions = {
   },
 };
 
-// OpenWeather API key
-
+// OpenWeather API key hidden in .env file
 export const OPENWEATHER_API_KEY = process.env.REACT_APP_OPENWEATHER_API_KEY;
 
 // OpenWeather API URL for relaying weather data

@@ -1,4 +1,5 @@
-// air quality will be displayed from Alex's microservice for air pollution data pulled from OpenWeather API
+// air polllution data format display setting
+// retrieved from Alex's microservice through 3rd party OpenWeather API; calls occur in app.js
 
 import "./air_pollution.css";
 import { useCollapse } from "react-collapsed"; // for collapsible definitions within card
@@ -41,9 +42,6 @@ const AirQuality = ({ data: pollutionData }) => {
 
         <section className="expandable" {...getCollapsePropsAir()}>
           <div className="airpollution_contentsDetails">
-            {/* <p> Air Quality Index: {pollutionData.aqi}</p> */}
-            {/* <p className="aqi-description">Air Quality Index: {pollutionData.aqi}</p> */}
-
             <div className="details">
               <div className="parameter-row">
                 <span className="parameter-label top">Details: </span>
@@ -63,7 +61,6 @@ const AirQuality = ({ data: pollutionData }) => {
                   Nitrogen monoxide (NO) concentration:
                 </span>
                 <span className="parameter-value">
-                  {/* {Math.round(pollutionData.no)}μg/m3 */}
                   {pollutionData.no} μg/m3
                 </span>
               </div>
@@ -91,7 +88,6 @@ const AirQuality = ({ data: pollutionData }) => {
                   Sulphur dioxide (SO2) concentration:
                 </span>
                 <span className="parameter-value">
-                  {/* {Math.round(pollutionData.so2)}μg/m3 */}
                   {pollutionData.so2} μg/m3
                 </span>
               </div>
@@ -139,7 +135,6 @@ const AirQuality = ({ data: pollutionData }) => {
                   <b>AQI [based on UK scale]</b>
                 </i>
               </li>
-              {/* <p className="definitionAir"> */}
               <dl className="definitionAir">
                 <dt>1 = Good</dt>
                 <dt>2 = Fair</dt>
@@ -147,8 +142,6 @@ const AirQuality = ({ data: pollutionData }) => {
                 <dt>4 = Poor</dt>
                 <dt>5 = Very Poor</dt>
               </dl>
-              {/* 1 = Good, 2 = Fair, 3 = Moderate, 4 = Poor, 5 = Very Poor */}
-              {/* </p> */}
             </ul>
           </section>
         </div>
@@ -158,6 +151,3 @@ const AirQuality = ({ data: pollutionData }) => {
 };
 
 export default AirQuality;
-
-// top = actualweather_contents
-// bottom = bottom

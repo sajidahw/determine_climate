@@ -11,10 +11,8 @@ header {
   font-family: "Montserrat", sans-serif;
   font-weight: bolder;
   margin: 0px auto;
-  /* padding: 1px 5px; 10px 25px */
   max-width: 1200px;
   border-style: double;
-  /* border-radius: 1%; */
   border-radius: 15px;
 }
 
@@ -29,17 +27,12 @@ h1 {
   font-family: "Montserrat", sans-serif;
   font-weight: bolder;
   max-width: 1200px;
-  /* border-style: ridge; */
   border-radius: 15px;
-  /* border-color: darkred; */
   border: 2px solid darkred;
 }
 
 footer {
   background-color: rgba(218, 167, 167, 0.883);
-  /* rgba(245, 213, 213, 0.801); */
-  /* background-color:var(--olive-green); */
-  /* color:var(--nude-pink); */
   color: rgb(64, 47, 1);
   font-family: "Montserrat", "Raleway", sans-serif;
   font-weight: bolder;
@@ -47,7 +40,6 @@ footer {
   margin: 1% auto;
   padding: 0.5%;
   max-width: 1200px;
-  /* border-style: 1px solid rgba(248, 229, 212, 1); */
   border-radius: 15px;
   text-align: center;
   letter-spacing: 3px;
@@ -59,43 +51,3 @@ footer {
 .weatherCardButton {
   float: right;
 }
-
-/* boiler plate code*/
-/* .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */

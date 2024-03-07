@@ -1,5 +1,5 @@
-// Search component for city search on top of the screen using the async paginate package
-// driven by geodb API for city search to obtain lat/long data
+// Autcomplete Search component for city search on top of the screen using the async paginate package
+// driven by GeoDB API for city search to obtain lat/long data
 
 import { useState } from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
@@ -7,14 +7,11 @@ import { geodbApiOptions as GeoDB_API_Options, geodb_api_url } from "../../api";
 
 // action which drives the city search in passing data to other widgets
 const CitySearch = ({ onSearchCityChange }) => {
-  // use state hooks variables with set for updating variable
-  const [citysearch, setCitySearch] = useState(null); // initial state is null
+  const [citysearch, setCitySearch] = useState(null);
 
-  // using fetch method to url to retrieve data from GeoDB API; adding constraint to show cities with population over value listed and showing results of inputValue
+  // retrieve data from GeoDB API; adding constraint to show cities with population over value listed and showing results of inputValue
   const loadCityOptions = async (inputValue) => {
-    // promise chain reworked to async/await
-    // inner return: return array of objects with long & lat as OpenWeatherMap API requires it to retrieve weather data
-    // options to return countries in descending order so US cities are shown sooner; offset = 0 and limit to show 10 results
+    // options to return countries in descending sort order so US cities are shown sooner; limit to show x results
     try {
       const cityResponse = await fetch(
         `${geodb_api_url}/cities?sort=-countryCode&limit=15&minPopulation=100000&namePrefix=${inputValue}`,
@@ -38,12 +35,9 @@ const CitySearch = ({ onSearchCityChange }) => {
   /* retrieve new data from asyncPaginate component, searchCityData */
   const handleOnChange = (searchCityData) => {
     setCitySearch(searchCityData); /* update search with new value*/
-    onSearchCityChange(
-      searchCityData
-    ); /* pass the city search data received from input */
+    onSearchCityChange(searchCityData);
   };
 
-  // what the user sees
   return (
     <>
       <br></br>
@@ -61,7 +55,7 @@ const CitySearch = ({ onSearchCityChange }) => {
         Duplicates may occur. Entering too many city searches within a couple of
         seconds may also result in an error.
       </label>
-      {/* <br></br> */}
+
       <label className="redRate">
         API Rate is Limited and requests are delayed.{" "}
       </label>
@@ -98,7 +92,5 @@ const CitySearch = ({ onSearchCityChange }) => {
 
 export default CitySearch;
 
-// initially tested with dummy component: return('Hello World!')
-// replaced with asyncPaginate placeholder to search for cities.
 // returns/get long and lat data from GeoDB API after a user enters in a city
 // async paginate is for drop down menu with autocomplete
