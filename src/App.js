@@ -46,7 +46,7 @@ function App() {
           ...currentPollutionResponse,
         });
       })
-      .catch((error) => console.log(error)); // fails
+      .catch((error) => console.log(error));
   };
 
   return (
