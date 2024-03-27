@@ -31,7 +31,28 @@ From your terminal console, open the localhost link to view it in your browser.
 
 <br>
 
-#### Getting Started with Create React App
+### Demo Screenshots:
+
+<b> Weather Retrieval:</b>
+
+&emsp;<img width="35%" alt="demo_cityweather" src="https://github.com/sajidahw/determine_climate/assets/88634981/8667d55b-a95f-4010-b9d2-7e250964b129">
+
+
+<b> Air Pollution Retrieval: </b>
+
+&emsp;<img width="35%" alt="demo_airquality" src="https://github.com/sajidahw/determine_climate/assets/88634981/88b399d7-3515-4451-8272-db1f4e5a3f52">
+
+
+<b> Detailed AQI and Gas Particles information:</b>
+
+&emsp;<img width="35%" alt="demo_expanded_gasparticles" src="https://github.com/sajidahw/determine_climate/assets/88634981/cbf945fb-e6e2-445e-a11b-9b57cb3d0435">
+
+
+
+
+<br>
+
+##### Getting Started with Create React App
 
 This app was built using the Create React app skeleton.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
